@@ -23,8 +23,8 @@ Créer le script arrêtant et supprimant ces conteneurs (exo1_destroy.sh)
 ****************************************************************************************************************************************
 (exo1_start.sh)
 ****************************************************************************************************************************************
-docker run -d --name redis1 redis1:7.0.7
-docker run -d --name redis2 redis2:alpine
+docker run -d --name redis1 redis:7.0.7
+docker run -d --name redis2 redis:alpine
 
 docker run -e MYSQL_ROOT_PASSWORD=admin -d --name mysql mysql:5.7
 docker run -e MYSQL_ROOT_PASSWORD=admin -d --name mysql2 7484689f290f
