@@ -1,0 +1,30 @@
+version: "3.9"
+    
+services:
+  mariadb:
+    image: mysql:5.7
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: maria
+      MYSQL_USER: maria
+      MYSQL_PASSWORD: admin
+    
+  flask:
+    depends_on:
+      - mariadb
+    image: exo5:latest
+
+    ports:
+      - "5000:5000"
+    restart: always
+    environment:
+      DB_HOST: mariadb
+      DB_USER: mariadb
+      DB_PASSWORD: admin
+      DB_NAME: mariadb
+volumes:
+  mariadb_data: {}
+  flask_data: {}
