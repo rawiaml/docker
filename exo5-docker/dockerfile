@@ -12,7 +12,7 @@ COPY script.sql .
 
 WORKDIR /app/template .
 
-COPY templates/index.html .
+COPY template/index.html .
 
 
 ENTRYPOINT ["python3","app.py"]
