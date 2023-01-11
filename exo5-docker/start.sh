@@ -11,12 +11,4 @@ echo "[+] création d'un conteneur redis"
 docker run --name app -d --network $NETWORK python:3.11-alpine
 
 echo "[+] création d'un conteneur pour l'application simpleweb"
-docker run --name web -d -p 3000:5000 --network $NETWORK $IMAGE
-
-
-env SAVE_DB=
-env DB_USER=user
-env DB_PASS=pasword
-env DB_HOST=host
-env DB_PORT=port
-env DB_NAME=database
+docker run --name web -d -p 5000:5000 --network $NETWORK $IMAGE
