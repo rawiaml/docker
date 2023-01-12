@@ -10,7 +10,7 @@ RUN pip install -r requirements.txt
 
 COPY script.sql .
 
-WORKDIR /app/template .
+WORKDIR /app/template
 
 COPY template/index.html .
 
