@@ -6,7 +6,7 @@ COPY app.py .
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN apk add curl
 
 COPY script.sql .
 
@@ -14,4 +14,8 @@ WORKDIR /app/template
 
 COPY template/index.html .
 
-ENTRYPOINT ["python","app.py"]
+RUN pip install -r /app/requirements.txt
+
+WORKDIR /app
+
+CMD [ "python", "./app.py" ]
